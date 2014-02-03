@@ -8,14 +8,18 @@ Giftegg::Application.routes.draw do
   get "/contact", to: "site#contact", as: :contact
 
   # Users controller
-  get "/users/new", to: "users#new"
+  get "/users/new", to: "users#new", as: :new_user
 
-  get "/users/:id", to: "users#show"
+  get "/users/:id", to: "users#show", as: :user
+
+  post "/users", to: "users#create"
 
   # Giftees controller
-  get "/giftees/new", to: "giftees#new"
+  get "/giftees/new", to: "giftees#new", as: :new_giftee
 
-  get "/giftees/:id", to: "giftees#show"
+  get "/giftees/:id", to: "giftees#show", as: :giftee
+
+  post "/giftees", to: "giftees#create"
 
 
 
