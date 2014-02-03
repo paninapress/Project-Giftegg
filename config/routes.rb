@@ -1,60 +1,50 @@
 Giftegg::Application.routes.draw do
-  get "giftees/new"
-  get "giftees/show"
-  get "users/new"
-  get "users/show"
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+  
+  # Site controller
+  root to: "site#index"
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  get "/about", to: "site#about", as: :about
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get "/contact", to: "site#contact", as: :contact
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
+  # Users controller
+  get "/users/new", to: "users#new"
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+  get "/users/:id", to: "users#show"
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+  # Giftees controller
+  get "/giftees/new", to: "giftees#new"
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+  get "/giftees/:id", to: "giftees#show"
 
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
 
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
 
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end
+
+#     Prefix Verb   URI Pattern                 Controller#Action
+ # site_index GET    /site(.:format)          site#index
+ #            POST   /site(.:format)          site#create
+ #   new_site GET    /site/new(.:format)      site#new
+ #  edit_site GET    /site/:id/edit(.:format) site#edit
+ #       site GET    /site/:id(.:format)      site#show
+ #            PATCH  /site/:id(.:format)      site#update
+ #            PUT    /site/:id(.:format)      site#update
+ #            DELETE /site/:id(.:format)      site#destroy
+
+#       users GET    /users(.:format)            users#index
+#             POST   /users(.:format)            users#create
+#    new_user GET    /users/new(.:format)        users#new
+#   edit_user GET    /users/:id/edit(.:format)   users#edit
+#        user GET    /users/:id(.:format)        users#show
+#             PATCH  /users/:id(.:format)        users#update
+#             PUT    /users/:id(.:format)        users#update
+#             DELETE /users/:id(.:format)        users#destroy
+
+#     giftees GET    /giftees(.:format)          giftees#index
+#             POST   /giftees(.:format)          giftees#create
+#  new_giftee GET    /giftees/new(.:format)      giftees#new
+# edit_giftee GET    /giftees/:id/edit(.:format) giftees#edit
+#      giftee GET    /giftees/:id(.:format)      giftees#show
+#             PATCH  /giftees/:id(.:format)      giftees#update
+#             PUT    /giftees/:id(.:format)      giftees#update
+#             DELETE /giftees/:id(.:format)      giftees#destroy
