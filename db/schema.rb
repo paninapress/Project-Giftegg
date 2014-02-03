@@ -11,10 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140203203639) do
+ActiveRecord::Schema.define(version: 20140203232305) do
 
   create_table "giftees", force: true do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.date     "birthday"
     t.string   "relation"
     t.string   "notes"
@@ -26,7 +27,8 @@ ActiveRecord::Schema.define(version: 20140203203639) do
   add_index "giftees", ["user_id"], name: "index_giftees_on_user_id"
 
   create_table "users", force: true do |t|
-    t.string   "name"
+    t.string   "first_name"
+    t.string   "last_name"
     t.string   "email"
     t.string   "phone"
     t.date     "birthday"

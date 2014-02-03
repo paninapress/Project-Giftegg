@@ -1,26 +1,15 @@
-# == Schema Information
-#
-# Table name: giftees
-#
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  birthday   :date
-#  relation   :string(255)
-#  notes      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
-#
-
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  first_name: MyString
+  last_name: MyString
   birthday: 2014-02-03
   relation: MyString
   notes: MyString
 
 two:
-  name: MyString
+  first_name: MyString
+  last_name: MyString
   birthday: 2014-02-03
   relation: MyString
   notes: MyString
