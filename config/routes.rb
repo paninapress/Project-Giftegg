@@ -1,5 +1,4 @@
 Giftegg::Application.routes.draw do
-  
   # Site controller
   root to: "site#index"
 
@@ -8,7 +7,7 @@ Giftegg::Application.routes.draw do
   get "/contact", to: "site#contact", as: :contact
 
   # Users controller
-  get "/signup", to: "users#new", as: :new_user
+  get "/signup", to: "users#new", as: :signup
 
   get "/users/:id", to: "users#show", as: :user
 
