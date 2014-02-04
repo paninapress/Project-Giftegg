@@ -16,8 +16,5 @@ class GifteesController < ApplicationController
 
   def show
     @giftee = Giftee.find(params[:id])
-    #Show who added this giftee
-    users = User.all
-    @user = users.find(@giftee.user_id)
   end
 end
