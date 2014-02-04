@@ -5,8 +5,8 @@ class GifteesController < ApplicationController
 
   def create
     new_giftee = params.require(:giftee).permit(:first_name, :last_name, :birthday, :relation, :notes)
-    giftee = User.create(new_giftee)
-    redirect_to user_path(giftee)
+    giftee = Giftee.create(new_giftee)
+    redirect_to giftee_path(giftee)
   end
 
   def show
