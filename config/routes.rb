@@ -1,5 +1,5 @@
 Giftegg::Application.routes.draw do
-  resources :sessions
+ 
   # Site controller
   root to: "site#index"
 
@@ -8,7 +8,7 @@ Giftegg::Application.routes.draw do
   get "/contact", to: "site#contact", as: :contact
 
   # Users controller
-  get "/signup", to: "users#new", as: :signup
+  get "/signup", to: "users#new"
 
   get "/users/:id", to: "users#show", as: :user
 
@@ -24,9 +24,11 @@ Giftegg::Application.routes.draw do
   post "/giftees", to: "giftees#create"
 
   # Sessions controller
-  delete "/signout", to: "sessions#destroy"
+  delete "/signout", to: "sessions#destroy", via: :delete
   
   get "/signin", to: "sessions#new"
+
+  post "/signin", to: "sessions#create"
 
 
 
@@ -59,3 +61,12 @@ end
 #             PATCH  /giftees/:id(.:format)      giftees#update
 #             PUT    /giftees/:id(.:format)      giftees#update
 #             DELETE /giftees/:id(.:format)      giftees#destroy
+
+#     sessions GET    /sessions(.:format)          sessions#index
+#              POST   /sessions(.:format)          sessions#create
+#  new_session GET    /sessions/new(.:format)      sessions#new
+# edit_session GET    /sessions/:id/edit(.:format) sessions#edit
+#      session GET    /sessions/:id(.:format)      sessions#show
+#              PATCH  /sessions/:id(.:format)      sessions#update
+#              PUT    /sessions/:id(.:format)      sessions#update
+#              DELETE /sessions/:id(.:format)      sessions#destroy
