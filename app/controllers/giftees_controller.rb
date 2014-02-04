@@ -1,4 +1,8 @@
 class GifteesController < ApplicationController
+  def index
+    @giftees = Giftee.all
+  end
+
   def new
     @giftee = Giftee.new
   end

@@ -15,6 +15,8 @@ Giftegg::Application.routes.draw do
   post "/users", to: "users#create"
 
   # Giftees controller
+  get "/giftees", to: "giftees#index", as: :giftees
+
   get "/giftees/new", to: "giftees#new", as: :new_giftee
 
   get "/giftees/:id", to: "giftees#show", as: :giftee
