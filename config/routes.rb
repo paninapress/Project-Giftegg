@@ -8,7 +8,7 @@ Giftegg::Application.routes.draw do
   get "/contact", to: "site#contact", as: :contact
 
   # Users controller
-  get "/users/new", to: "users#new", as: :new_user
+  get "/signup", to: "users#new", as: :new_user
 
   get "/users/:id", to: "users#show", as: :user
 
@@ -22,6 +22,11 @@ Giftegg::Application.routes.draw do
   get "/giftees/:id", to: "giftees#show", as: :giftee
 
   post "/giftees", to: "giftees#create"
+
+  # Sessions controller
+  delete "/signout", to: "sessions#destroy"
+  
+  get "/signin", to: "sessions#new"
 
 
 
