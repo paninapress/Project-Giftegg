@@ -1,4 +1,5 @@
 Giftegg::Application.routes.draw do
+  resources :sessions
   # Site controller
   root to: "site#index"
 
