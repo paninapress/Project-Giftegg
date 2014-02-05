@@ -10,7 +10,7 @@ Giftegg::Application.routes.draw do
   # Users controller
   get "/signup", to: "users#new"
 
-  get "/users/:id", to: "users#show", as: :user
+  get "/account/:id", to: "users#show", as: :user
 
   post "/users", to: "users#create"
 
