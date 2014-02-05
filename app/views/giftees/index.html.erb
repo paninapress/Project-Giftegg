@@ -1,1 +1,13 @@
-index.html.erb
+<h1>See all of your giftees</h1>
+<p>Find me in app/views/giftees/index.html.erb</p>
+
+<% @giftees.each do |g| %>
+  <%= g.first_name %>
+  <%= g.last_name %>
+<br>
+  <%= g.birthday %>
+<br>
+  <%= link_to "More info", giftee_path(g) %>
+<br>
+
+<% end %>
