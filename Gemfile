@@ -35,6 +35,9 @@ end
 # Use ActiveModel has_secure_password
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+# For Twilio API
+gem "twilio-ruby", "~> 3.11.5"
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
