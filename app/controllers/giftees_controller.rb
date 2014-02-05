@@ -14,8 +14,13 @@ class GifteesController < ApplicationController
   end
 
   def create
-    new_giftee = params.require(:giftee).permit(:first_name, :last_name, :birthday, :relation, :notes, :user_id => :signed_in_user)
+    #adds form info
+    new_giftee = params.require(:giftee).permit(:first_name, :last_name, :birthday, :relation, :notes)
+    #get user to add user_id
+    user = current_user
+    new_giftee[:user_id] = user.id
     giftee = Giftee.create(new_giftee)
+
     redirect_to giftee_path(giftee)
   end
 
@@ -29,7 +34,7 @@ class GifteesController < ApplicationController
 
   def update
     giftee = Giftee.find(params[:id])
-    updated_info = params.require(:giftee).permit(:first_name, :last_name, :birthday, :relation, :notes, :user_id => :signed_in_user)
+    updated_info = params.require(:giftee).permit(:first_name, :last_name, :birthday, :relation, :notes)
     giftee.update_attributes(updated_info)
     
     redirect_to giftee_path(giftee)
