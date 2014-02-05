@@ -6,7 +6,11 @@ class GifteesController < ApplicationController
   # before_filter :check_giftee_owner, only: [:destroy, :update, :edit]
 
   def index
-    @giftees = Giftee.all
+    user = current_user
+
+    @giftees = Giftee.where(:user_id => user.id)
+    
+    
   end
 
   def new
