@@ -26,7 +26,12 @@
   </div>
   <div class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
+      <% if signed_in? %>
       <li class="active"><%= link_to("Giftees", giftees_path) %></li>
+      <li><%= link_to("Create Giftee", new_giftee_path) %></li>
+      <% else %>
+      <li class="active"><%= link_to("Giftees", giftees_path) %></li>
+      <% end %>
     </ul>
   </div>
 </nav>
