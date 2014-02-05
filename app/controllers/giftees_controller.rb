@@ -3,7 +3,7 @@ class GifteesController < ApplicationController
   
 
   before_filter :signed_in_user, only: [:index, :new, :create, :show, :edit, :update]
-  before_filter :check_giftee_owner, only: [:destroy, :update, :edit]
+  # before_filter :check_giftee_owner, only: [:destroy, :update, :edit]
 
   def index
     @giftees = Giftee.all
@@ -21,5 +21,17 @@ class GifteesController < ApplicationController
 
   def show
     @giftee = Giftee.find(params[:id])
+  end
+
+  def edit
+    @giftee = Giftee.find(params[:id])
+  end
+
+  def update
+    giftee = Giftee.find(params[:id])
+    updated_info = params.require(:giftee).permit(:first_name, :last_name, :birthday, :relation, :notes, :user_id => :signed_in_user)
+    giftee.update_attributes(updated_info)
+    
+    redirect_to giftee_path(giftee)
   end
 end

@@ -21,7 +21,11 @@ Giftegg::Application.routes.draw do
 
   get "/giftees/:id", to: "giftees#show", as: :giftee
 
+  get "/giftees/:id/edit", to: "giftees#edit", as: :edit
+
   post "/giftees", to: "giftees#create"
+
+  patch "/giftees/:id", to: "giftees#update"
 
   # Sessions controller
   delete "/signout", to: "sessions#destroy", via: :delete

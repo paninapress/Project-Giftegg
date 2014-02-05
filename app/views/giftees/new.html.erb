@@ -1,22 +1,4 @@
 <h1>Giftees#new</h1>
 <p>Find me in app/views/giftees/new.html.erb</p>
 
-<%= form_for @giftee do |f| %>
-<%= f.label :first_name %>
-<%= f.text_field :first_name %>
-
-<%= f.label :last_name %>
-<%= f.text_field :last_name %>
-
-<%= f.label :birthday %>
-<%= f.date_field :birthday %>
-
-<%= f.label :relation %>
-<%= f.text_field :relation %>
-
-<%= f.label :notes %>
-<%= f.text_field :notes %>
-
-<%= f.submit %>
-
-<% end %>
+<%= render "giftee_form" %>
