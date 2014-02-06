@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Giftegg::Application.config.secret_key_base = '9f7b3502dcf1829c63f7a1242325dcc55d55e3121e72cabde77ae36ac0644531709e002cb1b1901fce86cc8c2afc80acc2e31c659c7e483468ba26331edabe05'
+Giftegg::Application.config.secret_key_base = ENV['SECRET_KEY_BASE']
