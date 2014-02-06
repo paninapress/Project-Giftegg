@@ -41,7 +41,11 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # For Twilio API
 gem "twilio-ruby", "~> 3.11.5"
 
+# For Heroku
 gem 'rails_12factor', group: :production
+
+# For ENV
+gem 'dotenv-rails'
 
 ruby "2.1.0"
 # Use unicorn as the app server
