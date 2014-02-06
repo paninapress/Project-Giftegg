@@ -1,6 +1,6 @@
 class GifteesController < ApplicationController
   include SessionsHelper
-  
+  require 'twilio-ruby'
 
   before_filter :signed_in_user, only: [:index, :new, :create, :show, :edit, :update]
   # before_filter :check_giftee_owner, only: [:destroy, :update, :edit]
@@ -24,7 +24,7 @@ class GifteesController < ApplicationController
     user = current_user
     new_giftee[:user_id] = user.id
     giftee = Giftee.create(new_giftee)
-
+    
     redirect_to giftee_path(giftee)
   end
 
@@ -43,4 +43,6 @@ class GifteesController < ApplicationController
     
     redirect_to giftee_path(giftee)
   end
+ 
+  
 end
