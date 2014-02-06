@@ -43,6 +43,5 @@ class GifteesController < ApplicationController
     
     redirect_to giftee_path(giftee)
   end
- 
-  
+
 end
