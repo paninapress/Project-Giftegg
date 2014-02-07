@@ -1,5 +1,4 @@
 <h1>See all of your giftees</h1>
-<p>Find me in app/views/giftees/index.html.erb</p>
 
 <% @giftees.each do |g| %>
 
@@ -12,3 +11,4 @@
 <br>
 
 <% end %>
+  <%= link_to "Add more Giftees", new_giftee_path %>
