@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140204181521) do
+ActiveRecord::Schema.define(version: 20140206204900) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "giftees", force: true do |t|
     t.string   "first_name"
@@ -22,9 +25,11 @@ ActiveRecord::Schema.define(version: 20140204181521) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "birth_day"
+    t.integer  "birth_month"
   end
 
-  add_index "giftees", ["user_id"], name: "index_giftees_on_user_id"
+  add_index "giftees", ["user_id"], name: "index_giftees_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
@@ -38,6 +43,6 @@ ActiveRecord::Schema.define(version: 20140204181521) do
     t.string   "remember_token"
   end
 
-  add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+  add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end

@@ -15,4 +15,14 @@
 
 class Giftee < ActiveRecord::Base
     belongs_to :user
+
+    before_save :update_birth_date_fields
+
+    private
+    def update_birth_date_fields
+      if birthday_changed?
+        self.birth_month = birthday ? birthday.month : nil
+        self.birth_day = birthday ? birthday.day : nil
+      end
+    end
 end
