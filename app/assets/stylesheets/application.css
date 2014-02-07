@@ -18,3 +18,15 @@ body {
 .container {
     width: 900px;
 }
+
+.logo {
+    height: 150px;
+   
+}
+.right {
+    float: right;
+}
+
+.left{
+    float: left
+}
