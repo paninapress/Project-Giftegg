@@ -34,7 +34,6 @@ Giftegg::Application.routes.draw do
 
   post "/signin", to: "sessions#create"
 
-
 end
 
 #     Prefix Verb   URI Pattern                 Controller#Action
