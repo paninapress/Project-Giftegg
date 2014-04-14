@@ -1,28 +1,24 @@
-== README
+== GiftEgg
+Current state of MVP: it's a web app to remind you when you have birthdays coming up. 
+**NOTE: Only using Twilio demo account so it won't actually text at the moment. Otherwise it's set up to do so each morning**
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my first self-directed project during my WDI course.
+It's a work in progress as I've only begun learning.
 
-Things you may want to cover:
+Made using:
+* Rails
+* PostgresSQL
+* Bootstrap
+* Twilio
+* GiftEgg image by http://mrjjh-sketchbook.tumblr.com
+* and hosted on Heroku
 
-* Ruby version
+== Concept
+Originally thought up as a gift recommender service for the children (nieces/nephews, children of your friends, or friends of your children) in your life. When I worked in a toy store, every Saturday parents came bursting in with the same request, "I need a gift for a *insert age* year old and I was supposed to be at the party 10 mins ago. Help!" Now imagine a way to be reminded early, recieve recommendations of the hottest toys, and possibly even make the purchase to have it delivered?
 
-* System dependencies
+== MVP aka Phase 1 - 2/7/14
+Ability to add Users/Giftees
+Text message reminders 2 weeks before a giftee's birthday.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Phase 2 - TBD
+Provide age-based gift recommendations
